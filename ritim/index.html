@@ -1,0 +1,365 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ritim | Çalışma Takibi</title>
+  <meta name="description" content="Ritim - Öğrenciler için günlük çalışma ritmi takip uygulaması. Performans değil ritim." />
+  <link rel="icon" type="image/png" href="./ritim-icon-final-1024.png" />
+  <style>
+    :root {
+      --bg: #fafaf9;
+      --surface: #ffffff;
+      --text: #1c1917;
+      --muted: #78716c;
+      --accent: #2f4f36;
+      --accent-soft: #e7efea;
+      --border: #e7e5e4;
+      --radius: 16px;
+      --shadow: 0 10px 30px rgba(28, 25, 23, 0.06);
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: "Avenir Next", "Helvetica Neue", Helvetica, Arial, sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at 5% -10%, #e7efea 0%, rgba(231, 239, 234, 0) 35%),
+        radial-gradient(circle at 95% 0%, #f4eee4 0%, rgba(244, 238, 228, 0) 35%),
+        var(--bg);
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    .wrap {
+      width: min(920px, 92vw);
+      margin: 40px auto 72px;
+      display: grid;
+      gap: 16px;
+    }
+
+    /* ── Hero ── */
+    .hero {
+      background: linear-gradient(135deg, var(--accent) 0%, #44403C 100%);
+      color: #fff;
+      border-radius: 24px;
+      padding: 36px 28px;
+      box-shadow: var(--shadow);
+      text-align: center;
+    }
+
+    .hero-icon-lg {
+      width: 80px;
+      height: 80px;
+      border-radius: 20px;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+      margin-bottom: 16px;
+    }
+
+    .hero h1 {
+      margin: 0;
+      font-size: clamp(32px, 6vw, 48px);
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+    }
+
+    .hero .tagline {
+      margin: 12px 0 0;
+      color: rgba(255, 255, 255, 0.88);
+      font-size: 17px;
+      font-weight: 500;
+    }
+
+    .hero .sub {
+      margin: 6px 0 0;
+      color: rgba(255, 255, 255, 0.6);
+      font-size: 14px;
+    }
+
+    /* ── Store Buttons ── */
+    .store-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      margin-top: 24px;
+      flex-wrap: wrap;
+    }
+
+    .store-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: rgba(255, 255, 255, 0.12);
+      border: 1.5px solid rgba(255, 255, 255, 0.25);
+      color: #fff;
+      text-decoration: none;
+      border-radius: 14px;
+      padding: 12px 20px;
+      font-weight: 600;
+      font-size: 15px;
+      transition: background 0.2s, border-color 0.2s;
+    }
+
+    .store-btn:hover {
+      background: rgba(255, 255, 255, 0.22);
+      border-color: rgba(255, 255, 255, 0.4);
+    }
+
+    .store-btn svg {
+      flex-shrink: 0;
+    }
+
+    .store-btn .label-sm {
+      font-size: 11px;
+      font-weight: 400;
+      opacity: 0.75;
+      display: block;
+      line-height: 1;
+    }
+
+    .store-btn .label-lg {
+      display: block;
+      line-height: 1.2;
+    }
+
+    /* ── Cards ── */
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 22px;
+      box-shadow: var(--shadow);
+    }
+
+    h2 {
+      margin: 0 0 10px;
+      font-size: 20px;
+      letter-spacing: -0.01em;
+    }
+
+    p { margin: 0; }
+    p + p { margin-top: 8px; }
+
+    .muted { color: var(--muted); }
+
+    .pill {
+      display: inline-block;
+      padding: 4px 10px;
+      border-radius: 999px;
+      background: var(--accent-soft);
+      color: var(--accent);
+      font-size: 12px;
+      font-weight: 700;
+      margin-bottom: 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    a { color: var(--accent); }
+
+    /* ── Features Grid ── */
+    .features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 12px;
+    }
+
+    .feature {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 20px;
+      box-shadow: var(--shadow);
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+
+    .feature:hover {
+      border-color: var(--accent);
+      box-shadow: 0 10px 30px rgba(28, 25, 23, 0.1);
+    }
+
+    .feature-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 10px;
+      background: var(--accent-soft);
+      color: var(--accent);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 12px;
+    }
+
+    .feature h3 {
+      margin: 0 0 4px;
+      font-size: 16px;
+    }
+
+    .feature p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    /* ── Links Grid ── */
+    .links-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 10px;
+    }
+
+    .link-card {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 16px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      text-decoration: none;
+      color: var(--text);
+      box-shadow: var(--shadow);
+      transition: border-color 0.2s;
+    }
+
+    .link-card:hover {
+      border-color: var(--accent);
+    }
+
+    .link-icon {
+      width: 36px;
+      height: 36px;
+      border-radius: 10px;
+      background: var(--accent-soft);
+      color: var(--accent);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      font-weight: 700;
+      font-size: 16px;
+    }
+
+    .link-card span {
+      font-weight: 600;
+      font-size: 14px;
+    }
+
+    /* ── Footer ── */
+    .footer {
+      text-align: center;
+      color: var(--muted);
+      font-size: 13px;
+      padding-top: 12px;
+    }
+
+    .footer a {
+      color: var(--muted);
+    }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+
+    <!-- Hero -->
+    <section class="hero">
+      <img class="hero-icon-lg" src="./ritim-icon-final-1024.png" alt="Ritim" />
+      <h1>Ritim</h1>
+      <p class="tagline">Performans değil, ritim.</p>
+      <p class="sub">Öğrenciler için günlük çalışma ritmi takip uygulaması</p>
+
+      <div class="store-buttons">
+        <!-- App Store -->
+        <a class="store-btn" href="https://apps.apple.com/tr/app/ritim-%C3%A7al%C4%B1%C5%9Fma-takibi/id6759564247?l=tr" target="_blank" rel="noopener">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5C17.88 20.74 17 21.95 15.66 21.97C14.32 22 13.89 21.18 12.37 21.18C10.84 21.18 10.37 21.95 9.1 22C7.79 22.05 6.8 20.68 5.96 19.47C4.25 16.56 2.93 11.3 4.7 7.72C5.57 5.94 7.36 4.86 9.28 4.84C10.56 4.81 11.78 5.72 12.57 5.72C13.36 5.72 14.85 4.62 16.41 4.8C17.07 4.83 18.89 5.08 20.05 6.82C19.93 6.9 17.54 8.27 17.56 11.11C17.59 14.51 20.55 15.6 20.58 15.61C20.56 15.69 20.12 17.24 18.71 19.5ZM13 3.5C13.73 2.67 14.94 2.04 15.94 2C16.07 3.17 15.6 4.35 14.9 5.19C14.21 6.04 13.07 6.7 11.95 6.61C11.8 5.46 12.36 4.26 13 3.5Z"/></svg>
+          <div>
+            <span class="label-sm">App Store'dan</span>
+            <span class="label-lg">İndir</span>
+          </div>
+        </a>
+
+        <!-- Google Play -->
+        <a class="store-btn" href="https://play.google.com/store/apps/details?id=com.hburaks.ritim" target="_blank" rel="noopener">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M3.61 1.814L13.793 12 3.61 22.186a.996.996 0 0 1-.61-.92V2.734a1 1 0 0 1 .61-.92zm1.4-.6L15.81 7.01l-2.88 2.88L5.01 1.214zm0 21.572l7.92-8.674-2.88-2.88L5.01 21.786zM20.11 10.907l-3.17 1.764-3.17-3.17 3.17-3.17 3.17 1.764a1.25 1.25 0 0 1 0 2.175v.637z"/></svg>
+          <div>
+            <span class="label-sm">Google Play'den</span>
+            <span class="label-lg">İndir</span>
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <!-- Özellikler -->
+    <div class="features">
+      <div class="feature">
+        <div class="feature-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/><path d="M8 14h.01"/><path d="M12 14h.01"/><path d="M16 14h.01"/><path d="M8 18h.01"/><path d="M12 18h.01"/></svg>
+        </div>
+        <h3>Günlük Çalışma Takibi</h3>
+        <p>Her gün ne kadar odaklandığını kaydet. Baskısız, yargılamayan bir deneyim.</p>
+      </div>
+      <div class="feature">
+        <div class="feature-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/><path d="M3 20h18"/></svg>
+        </div>
+        <h3>Deneme Analizi</h3>
+        <p>Deneme sonuçlarını kaydet, net gelişimini takip et.</p>
+      </div>
+      <div class="feature">
+        <div class="feature-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        </div>
+        <h3>Koç Bağlantısı</h3>
+        <p>Koçunla bağlan, ilerlemenizi birlikte takip edin.</p>
+      </div>
+    </div>
+
+    <!-- Sınav Alanları -->
+    <section class="card">
+      <span class="pill">Desteklenen Sınav Alanları</span>
+      <p>LGS 7. Sınıf &middot; LGS 8. Sınıf &middot; YKS &middot; KPSS &middot; ALES &middot; DGS</p>
+    </section>
+
+    <!-- Yasal Linkler -->
+    <section class="card">
+      <h2>Yasal</h2>
+      <div class="links-grid">
+        <a class="link-card" href="./privacy-policy.html">
+          <div class="link-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+          </div>
+          <span>Gizlilik Politikası</span>
+        </a>
+        <a class="link-card" href="./terms-of-use.html">
+          <div class="link-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+          </div>
+          <span>Kullanım Koşulları</span>
+        </a>
+        <a class="link-card" href="./account-deletion.html">
+          <div class="link-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 4H8l-7 8 7 8h13a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2z"/><line x1="18" y1="9" x2="12" y2="15"/><line x1="12" y1="9" x2="18" y2="15"/></svg>
+          </div>
+          <span>Hesap Silme</span>
+        </a>
+      </div>
+    </section>
+
+    <!-- İletişim -->
+    <section class="card">
+      <h2>İletişim</h2>
+      <p>Soru, öneri veya destek talebin için:</p>
+      <p><a href="mailto:hasanburaksongur@gmail.com">hasanburaksongur@gmail.com</a></p>
+    </section>
+
+    <!-- Footer -->
+    <div class="footer">
+      <p>&copy; 2026 Ritim &middot; <a href="./privacy-policy.html">Gizlilik</a> &middot; <a href="./terms-of-use.html">Koşullar</a></p>
+    </div>
+
+  </main>
+</body>
+</html>
