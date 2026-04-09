@@ -1,0 +1,250 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Pisipik | Privacy Policy</title>
+  <style>
+    :root {
+      --bg: #0A0920;
+      --surface: rgba(255, 255, 255, 0.06);
+      --text: #E8E6F0;
+      --muted: #8B87A3;
+      --accent: #6C5CE7;
+      --accent-gold: #FDCB6E;
+      --accent-soft: rgba(108, 92, 231, 0.15);
+      --border: rgba(255, 255, 255, 0.08);
+      --radius: 16px;
+      --shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: "Avenir Next", "Helvetica Neue", Helvetica, Arial, sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at 30% -5%, rgba(108, 92, 231, 0.25) 0%, transparent 40%),
+        radial-gradient(circle at 80% 10%, rgba(74, 61, 181, 0.15) 0%, transparent 35%),
+        var(--bg);
+      line-height: 1.65;
+    }
+
+    .wrap {
+      width: min(920px, 92vw);
+      margin: 40px auto 72px;
+      display: grid;
+      gap: 16px;
+    }
+
+    .hero {
+      background: linear-gradient(135deg, var(--accent) 0%, #4a3db5 50%, #1a1440 100%);
+      color: #fff;
+      border-radius: 24px;
+      padding: 28px;
+      box-shadow: var(--shadow);
+      border: 1px solid rgba(108, 92, 231, 0.3);
+    }
+
+    .hero h1 {
+      margin: 0;
+      font-size: clamp(28px, 5vw, 42px);
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+    }
+
+    .hero p {
+      margin: 10px 0 0;
+      color: rgba(255, 255, 255, 0.86);
+      font-size: 15px;
+    }
+
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 22px;
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+    }
+
+    h2 {
+      margin: 0 0 10px;
+      font-size: 20px;
+      letter-spacing: -0.01em;
+    }
+
+    ul { margin: 0; padding-left: 20px; }
+    li + li { margin-top: 6px; }
+    p { margin: 0; color: var(--text); }
+    p + p { margin-top: 8px; }
+
+    .muted { color: var(--muted); }
+
+    .pill {
+      display: inline-block;
+      padding: 4px 10px;
+      border-radius: 999px;
+      background: rgba(253, 203, 110, 0.15);
+      color: var(--accent-gold);
+      font-size: 12px;
+      font-weight: 700;
+      margin-bottom: 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    .table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 8px;
+    }
+
+    .table th,
+    .table td {
+      border: 1px solid var(--border);
+      padding: 10px;
+      vertical-align: top;
+      text-align: left;
+      font-size: 14px;
+    }
+
+    .table th {
+      background: rgba(108, 92, 231, 0.1);
+      font-weight: 700;
+    }
+
+    .table-wrap {
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    a { color: #A29BFE; }
+
+    .hero-brand {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 6px;
+    }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <section class="hero">
+      <div class="hero-brand">
+        <h1>Pisipik Privacy Policy</h1>
+      </div>
+      <p>Effective date: April 9, 2026</p>
+      <p>This policy explains what data Pisipik collects, how it is used, and how it is protected.</p>
+    </section>
+
+    <section class="card">
+      <span class="pill">Data Controller</span>
+      <p><strong>Pisipik</strong> (independent developer product) is responsible for the data processing described in this policy.</p>
+      <p class="muted">Contact: <a href="mailto:hasanburaksongur@gmail.com">hasanburaksongur@gmail.com</a></p>
+    </section>
+
+    <section class="card">
+      <h2>1) Data We Collect</h2>
+      <ul>
+        <li><strong>Account data:</strong> When you sign in with Apple, we receive your Apple-provided user identifier and, if you choose to share it, your email address. If you use the app anonymously, only a technical anonymous ID is created.</li>
+        <li><strong>Pet photos:</strong> Photos you upload for AI portrait generation. These are sent to our server for processing and are not stored permanently after generation is complete.</li>
+        <li><strong>Generated portraits:</strong> AI-generated images are stored in your collection so you can access them later.</li>
+        <li><strong>Purchase data:</strong> Credit pack purchases (type, amount, date). Payment details (card number, etc.) are never stored by Pisipik; they are handled exclusively by Apple.</li>
+        <li><strong>Credit balance:</strong> Your current credit count, managed server-side.</li>
+        <li><strong>Device diagnostics:</strong> Anonymous crash logs (error message, module, device platform, app version). These logs do not contain personal information.</li>
+      </ul>
+    </section>
+
+    <section class="card">
+      <h2>2) How We Use Your Data</h2>
+      <ul>
+        <li>Generate AI pet portraits from the photos you upload.</li>
+        <li>Maintain your portrait collection so you can view and share your images.</li>
+        <li>Track and manage your credit balance for in-app purchases.</li>
+        <li>Verify purchase status and provide purchased credits.</li>
+        <li>Detect and fix app errors (anonymous diagnostics).</li>
+      </ul>
+    </section>
+
+    <section class="card">
+      <h2>3) Data Sharing</h2>
+      <p>Your data is only processed by services necessary for the app to function:</p>
+      <div class="table-wrap">
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Service</th>
+            <th>Purpose</th>
+            <th>Data Type</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Supabase</td>
+            <td>Authentication and cloud storage</td>
+            <td>Account ID, credit balance, generated portrait references</td>
+          </tr>
+          <tr>
+            <td>Sign in with Apple</td>
+            <td>Apple ID authentication (iOS)</td>
+            <td>Account credentials required for sign-in</td>
+          </tr>
+          <tr>
+            <td>fal.ai</td>
+            <td>AI image generation</td>
+            <td>Pet photos (for processing only; not stored by fal.ai after generation)</td>
+          </tr>
+          <tr>
+            <td>RevenueCat</td>
+            <td>In-app purchase management</td>
+            <td>User ID, purchase status, credit pack info</td>
+          </tr>
+        </tbody>
+      </table>
+      </div>
+      <p style="margin-top: 10px;" class="muted">We do not sell or share data with advertising networks.</p>
+    </section>
+
+    <section class="card">
+      <h2>4) Photo Processing</h2>
+      <p>When you upload a pet photo, it is sent to our server, which forwards it to the AI generation service (fal.ai). The uploaded photo is used solely for generating your portrait and is not retained after the generation process is complete.</p>
+      <p>Generated portraits are stored in your collection until you delete them or your account.</p>
+    </section>
+
+    <section class="card">
+      <h2>5) Data Retention</h2>
+      <ul>
+        <li>Uploaded pet photos are processed in real-time and not permanently stored on our servers.</li>
+        <li>Generated portraits and account data are retained until you request account deletion.</li>
+        <li>Diagnostic logs are retained for a maximum of 90 days and are automatically deleted.</li>
+      </ul>
+    </section>
+
+    <section class="card">
+      <h2>6) Age Requirement</h2>
+      <p>Pisipik is designed for users aged <strong>4 and older</strong>. The app does not knowingly collect personal information from children under 4.</p>
+    </section>
+
+    <section class="card">
+      <h2>7) Your Rights &amp; Account Deletion</h2>
+      <p>You can request deletion of your account and all associated data by contacting us at <a href="mailto:hasanburaksongur@gmail.com?subject=Pisipik%20Account%20Deletion%20Request">hasanburaksongur@gmail.com</a>.</p>
+      <p>Upon deletion, all your generated portraits, credit balance, and account information will be permanently removed.</p>
+    </section>
+
+    <section class="card">
+      <h2>8) Policy Updates</h2>
+      <p>This policy may be updated as the product evolves. The current version will always be available on this page.</p>
+    </section>
+
+    <section class="card">
+      <h2>9) Contact</h2>
+      <p>For questions or concerns about this privacy policy:</p>
+      <p><a href="mailto:hasanburaksongur@gmail.com">hasanburaksongur@gmail.com</a></p>
+    </section>
+  </main>
+</body>
+</html>
