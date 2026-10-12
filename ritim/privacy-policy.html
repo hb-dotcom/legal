@@ -142,7 +142,7 @@
         <img class="hero-icon" src="./ritim-icon-final-1024.png" alt="Ritim" />
         <h1>Ritim Gizlilik Politikası</h1>
       </div>
-      <p>Yürürlük tarihi: 25 Mart 2026</p>
+      <p>Yürürlük tarihi: 12 Ekim 2026</p>
       <p>Bu politika, Ritim uygulamasında hangi verilerin işlendiğini ve nasıl korunduğunu açıklar.</p>
     </section>
 
@@ -156,11 +156,12 @@
       <h2>1) Toplanan Veriler</h2>
       <ul>
         <li><strong>Hesap verisi:</strong> Google veya Apple ile giriş yaptığında e-posta adresin ve teknik kullanıcı kimliğin (user id).</li>
-        <li><strong>Profil verisi:</strong> Görünen ad (display name), aktif çalışma alanı (LGS7/LGS8/YKS), koç-öğrenci bağlantı bilgisi.</li>
-        <li><strong>Çalışma verisi:</strong> Günlük kayıtlar (dakika, aktivite tipi, soru/ders dağılımı), deneme kayıtları (tür, nete esas skor alanları, süre, tarih).</li>
-        <li><strong>Abonelik verisi:</strong> Satın alınan plan türü (Bireysel / Pro / Akademi), abonelik durumu ve geçerlilik bilgisi. Ödeme bilgileri (kart numarası vb.) Ritim tarafından saklanmaz; bu bilgiler yalnızca Apple ve Google tarafından işlenir.</li>
+        <li><strong>Profil verisi:</strong> Görünen ad (display name), aktif çalışma alanı (LGS 7, LGS 8, YKS, KPSS, ALES, DGS), koç-öğrenci bağlantı bilgisi.</li>
+        <li><strong>Çalışma verisi:</strong> Günlük kayıtlar (dakika, aktivite tipi, soru/ders dağılımı), deneme kayıtları (deneme adı, tür, nete esas skor alanları, süre, tarih).</li>
+        <li><strong>Koç notları:</strong> Koçun bağlı öğrencisi için yazdığı notlar. Notu koç yazar, ilgili öğrenci uygulama içinde görür.</li>
+        <li><strong>Abonelik verisi:</strong> Satın alınan plan türü (Bireysel / Pro / Akademi), abonelik durumu, geçerlilik bilgisi ve satın alma geçmişi. Ödeme bilgileri (kart numarası vb.) Ritim tarafından saklanmaz; bu bilgiler yalnızca Apple ve Google tarafından işlenir.</li>
         <li><strong>Cihaz içi ayarlar:</strong> Bildirim tercihi/saati, uygulama modu, bazı ekran durumları (yerel olarak saklanan uygulama anahtarları).</li>
-        <li><strong>Hata teşhis verileri:</strong> Uygulama hatalarında anonim hata kayıtları (hata mesajı, kaynak modül, cihaz platformu, uygulama versiyonu). Bu kayıtlar kişisel bilgi (e-posta, isim) içermez.</li>
+        <li><strong>Hata teşhis verileri:</strong> Uygulama hata verdiğinde bir hata kaydı tutulur (hata mesajı, kaynak modül, cihaz platformu, uygulama sürümü). Giriş yaptıysan bu kayıtların bir kısmı teknik kullanıcı kimliğini de taşır. Kayıtlarda e-posta ya da ad alanı yoktur.</li>
       </ul>
     </section>
 
@@ -172,7 +173,7 @@
         <li>Abonelik durumunu doğrulamak ve satın alınan plana uygun özellikleri sunmak.</li>
         <li>Hesaplar karışmasın diye çoklu hesap güvenliği ve veri yeniden yükleme senaryolarını yürütmek.</li>
         <li>Hatırlatıcı bildirim planlamasını yapmak (yerel cihaz düzeyinde).</li>
-        <li>Uygulama hatalarını tespit edip düzeltmek (anonim hata teşhisi).</li>
+        <li>Uygulama hatalarını bulup düzeltmek (hata teşhisi).</li>
       </ul>
     </section>
 
@@ -192,7 +193,7 @@
           <tr>
             <td>Supabase</td>
             <td>Kimlik doğrulama ve bulut senkronizasyonu</td>
-            <td>Hesap kimliği, profil bilgisi, kayıt/deneme verileri, koç-öğrenci bağlantısı</td>
+            <td>Hesap kimliği, profil bilgisi, kayıt/deneme verileri, koç notları, koç-öğrenci bağlantısı, hata kayıtları</td>
           </tr>
           <tr>
             <td>Google OAuth</td>
@@ -207,7 +208,7 @@
           <tr>
             <td>RevenueCat</td>
             <td>Uygulama içi abonelik yönetimi</td>
-            <td>Kullanıcı kimliği, abonelik durumu ve plan bilgisi</td>
+            <td>Kullanıcı kimliği (giriş yapmadıysan rastgele üretilen anonim bir kimlik), abonelik durumu, plan bilgisi ve satın alma geçmişi</td>
           </tr>
           <tr>
             <td>Expo Notifications (yerel)</td>
@@ -232,7 +233,8 @@
         <li>Lokal veriler, uygulama kaldırılana veya temizlenene kadar cihazda kalabilir.</li>
         <li>Bulut verileri (hesap/profil/kayıtlar), hesap silme talebi işlenene kadar saklanır.</li>
         <li>Koç-öğrenci ilişki verileri bağlantı durumuna göre güncellenir.</li>
-        <li>Hata teşhis kayıtları en fazla 90 gün saklanır ve otomatik olarak silinir.</li>
+        <li>Hata teşhis kayıtları en fazla 90 gün saklanır ve otomatik olarak silinir. Hesabını sildiğinde kimliğini taşıyan hata kayıtları da silinir.</li>
+        <li>Hesabını sildiğinde RevenueCat'teki abonelik kaydın (kullanıcı kimliği ve satın alma geçmişi) kendiliğinden silinmez. Silinmesini istersen yukarıdaki e-posta adresine yaz; kaydı elle sileriz.</li>
       </ul>
     </section>
 
